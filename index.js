@@ -24,15 +24,20 @@ app.use(bodyParser.json())
 //  跨域請求的判斷
 app.use(cors({
   origin (origin, callback) {
-    if (process.env.ALLOW_CORS === 'true') {
-      // 開發環境 ， 允許進入！
-      callback(null, true)
-    } else if (origin.includes('github')) {
-      // 非開發環境，但是是從github過來的，允許進入！
+    // 直接開網頁，不是 ajax 時，origin 是 undefined
+    if (origin === undefined) {
       callback(null, true)
     } else {
-      // 不是開發環境也不是從github過來的，拒絕進入！
-      callback(new Error('Not allowed'), false)
+      if (process.env.ALLOW_CORS === 'true') {
+        // 開發環境，允許
+        callback(null, true)
+      } else if (origin.includes('github')) {
+        // 非開發環境，但是從 github 過來，允許
+        callback(null, true)
+      } else {
+        // 不是開發也不是從 github 過來，拒絕
+        callback(new Error('Not allowed'), false)
+      }
     }
   },
   credentials: true
