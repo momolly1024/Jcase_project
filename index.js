@@ -59,6 +59,8 @@ app.use(session({
     // 1秒*60*30=30分鐘
     maxAge: 1000 * 60 * 30
   },
+  sameSite: 'None',
+  secure: true,
   // 是否保存未修改的session
   saveUninitialized: false,
   // 是否每次重設過期時間
