@@ -68,34 +68,34 @@ app.use(session({
   rolling: true
 }))
 
-let storage
-if (process.env.FTP === 'false') {
-  // 開發環境將上傳檔案放本機
-  storage = multer.diskStorage({
-    destination (req, file, cb) {
-      cb(null, 'images/')
-    },
-    filename (req, file, cb) {
-      cb(null, Date.now() + path.extname(file.originalname))
-    }
-  })
-} else {
-  // heroku 將上傳檔案放伺服器
-  storage = new FTPStorage({
-    // 上傳伺服器的路徑
-    basepath: '/',
-    // FTP 設定
-    ftp: {
-      host: process.env.FTP_HOST,
-      secure: false,
-      user: process.env.FTP_USER,
-      password: process.env.FTP_PASSWORD
-    },
-    destination (req, file, options, cb) {
-      cb(null, options.basepath + Date.now() + path.extname(file.originalname))
-    }
-  })
-}
+// let storage
+// if (process.env.FTP === 'false') {
+//   // 開發環境將上傳檔案放本機
+//   storage = multer.diskStorage({
+//     destination (req, file, cb) {
+//       cb(null, 'images/')
+//     },
+//     filename (req, file, cb) {
+//       cb(null, Date.now() + path.extname(file.originalname))
+//     }
+//   })
+// } else {
+//   // heroku 將上傳檔案放伺服器
+//   storage = new FTPStorage({
+//     // 上傳伺服器的路徑
+//     basepath: '/',
+//     // FTP 設定
+//     ftp: {
+//       host: process.env.FTP_HOST,
+//       secure: false,
+//       user: process.env.FTP_USER,
+//       password: process.env.FTP_PASSWORD
+//     },
+//     destination (req, file, options, cb) {
+//       cb(null, options.basepath + Date.now() + path.extname(file.originalname))
+//     }
+//   })
+// }
 
 // 啟動 -------------------------------------------
 app.listen(process.env.PORT, () => {
