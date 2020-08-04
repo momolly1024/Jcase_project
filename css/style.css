@@ -44,6 +44,10 @@ h2 {
   color: #a89494;
 }
 
+#carousel h2, #Member h2, #Cooperation h2, #story h2 {
+  color: #3b2b2b;
+}
+
 .nav a {
   display: inline-block;
   position: relative;
