@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "case.ico"
   },
   {
-    "revision": "98b33a340cef9a838cbf",
+    "revision": "98f9f2146e641957c845",
     "url": "css/app.596bfee6.css"
   },
   {
@@ -44,7 +44,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/story.236cc28c.png"
   },
   {
-    "revision": "22910afc67df2cfc53ac1d0a94b6360a",
+    "revision": "f3ed514d15683d8048943aa1faacf450",
     "url": "index.html"
   },
   {
@@ -52,12 +52,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/about.1b7e9d5a.js"
   },
   {
-    "revision": "e91147615315ce30bdc2",
-    "url": "js/admin.b20985ba.js"
+    "revision": "823810bac9279831e0a1",
+    "url": "js/admin.fd94e764.js"
   },
   {
-    "revision": "98b33a340cef9a838cbf",
-    "url": "js/app.e00ddc45.js"
+    "revision": "98f9f2146e641957c845",
+    "url": "js/app.b61b37ca.js"
   },
   {
     "revision": "8ada3eec474401a3f93e",
