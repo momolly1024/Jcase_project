@@ -204,6 +204,12 @@ margin-bottom: 3rem;
   margin: 0 auto;
 }
 
+.postform-control {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
 #input-account,#input-password,#input-nickname,#msginput,#input-email{
   width: 50%;
 }

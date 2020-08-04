@@ -13,6 +13,7 @@
     b-form(@submit="submit" id="sendform")
       p(v-model="date") {{date}}
       b-form-input(
+        class="postform-control"
         v-model="title"
         placeholder="請輸入標題"
         :state="textstate"
@@ -25,11 +26,13 @@
       br
       br
       b-form-input(
+        class="postform-control"
         v-model="budget"
         placeholder="請輸入預算金額"
       )
       br
       b-form-textarea(
+        class="postform-control"
         v-model="description"
         placeholder="案件說明"
         rows="3" max-rows="6"
