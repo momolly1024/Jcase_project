@@ -957,13 +957,6 @@ app.patch('/users/:id', async (req, res) => {
     res.send({ success: false, message: '格式不符' })
     return
   }
-  // 沒有登入
-  if (!req.session.user) {
-    res.status(401)
-    res.send({ success: false, message: '無權限' })
-    return
-  }
-
   try {
     const result = await db.users.findByIdAndUpdate(req.params.id, req.body, { new: true })
     res.status(200)
@@ -994,13 +987,6 @@ app.patch('/admins/:id', async (req, res) => {
     res.send({ success: false, message: '格式不符' })
     return
   }
-  // 沒有登入
-  if (!req.session.admin) {
-    res.status(401)
-    res.send({ success: false, message: '無權限' })
-    return
-  }
-
   try {
     const result = await db.admins.findByIdAndUpdate(req.params.id, req.body, { new: true })
     res.status(200)
@@ -1054,13 +1040,6 @@ app.patch('/msg/:id', async (req, res) => {
     res.send({ success: false, message: '格式不符' })
     return
   }
-  // 沒有登入
-  if (!req.session.user) {
-    res.status(401)
-    res.send({ success: false, message: '無權限' })
-    return
-  }
-
   try {
     const result = await db.contact.findByIdAndUpdate(req.params.id, req.body, { new: true })
     res.status(200)
@@ -1086,11 +1065,6 @@ app.patch('/msg/:id', async (req, res) => {
 
 // 後台刪除 意見  -----------------------------------------
 app.delete('/msg/:id', async (req, res) => {
-  if (!req.session.user) {
-    res.status(401)
-    res.send({ success: false, message: '無權限' })
-    return
-  }
   try {
     const result = await db.contact.findByIdAndDelete(req.params.id)
     if (result === null) {
