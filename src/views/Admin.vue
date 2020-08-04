@@ -2,7 +2,7 @@
 <div id="Admin">
   <h1>後台管理  </h1>
   <p> {{ date }} </p>
-  <a href="#" @click="logout" class="adminlogout"><font-awesome-icon :icon="['fas', 'user-friends']"/>登出後台</a>
+  <br>
   <div class="back">
     <b-tabs content-class="mt-3">
       <b-tab title="新增後台帳號" ><Createadmin></Createadmin></b-tab>
@@ -15,6 +15,7 @@
 
     </b-tabs>
   </div>
+    <a href="#" @click="logout" class="adminlogout"><font-awesome-icon :icon="['fas', 'user-friends']"/>登出後台</a>
 </div>
 
 </template>
