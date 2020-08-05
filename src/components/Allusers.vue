@@ -7,8 +7,8 @@
           <!-- {{ data }} -->
           <b-btn @click="block(data.index)" variant="info" v-if="!data.item.block">封鎖</b-btn>
           <b-btn  @click="block(data.index)" variant="warning" v-else-if="data.item.block">復原</b-btn>
-          |
           <b-btn  @click="deluser(data.index)" variant="danger">刪除</b-btn>
+          <b-btn  @click="delcase(data.index)" variant="danger">刪除所有Case</b-btn>
 
         </template>
       </b-table>
@@ -62,6 +62,22 @@ export default {
           })
         })
         .catch(() => {
+          Swal.fire('發生錯誤')
+        })
+    },
+    delcase (idx) {
+      this.axios.delete(process.env.VUE_APP_APIURL + '/usercase/' + this.userlist[idx].account)
+        .then(response => {
+          console.log(this.userlist[idx].account)
+          Swal.fire({
+            title: '刪除所有Case成功',
+            timer: 1000,
+            showConfirmButton: false
+          })
+        })
+        .catch((error) => {
+          console.log(error)
+          console.log('error+' + this.userlist[idx].account)
           Swal.fire('發生錯誤')
         })
     }
