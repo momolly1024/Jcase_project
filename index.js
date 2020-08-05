@@ -1004,7 +1004,33 @@ app.delete('/users/:id', async (req, res) => {
     }
   }
 })
-
+// 刪除某使用者的所有CASE
+app.delete('/usercase/:account', async (req, res) => {
+  try {
+    const result = await db.cases.find({ account: req.params.user })
+    for (let i = 0; i < result.length; i++) {
+      if (result[i].user === req.params.account) {
+        const delcase = await db.cases.findByIdAndDelete(result[i]._id)
+        if (delcase === null) {
+          res.status(404)
+          res.send({ success: false, message: '找不到資料' })
+        } else {
+          res.status(200)
+          res.send({ success: true, message: '', delcase })
+        }
+      }
+    }
+  } catch (error) {
+    if (error.name === 'CastError') {
+      res.status(400)
+      res.send({ success: false, message: 'ID 格式錯誤' })
+    } else {
+      // 伺服器錯誤
+      res.status(500)
+      res.send({ success: false, message: '伺服器錯誤' })
+    }
+  }
+})
 // 封鎖後台帳號
 app.patch('/admins/:id', async (req, res) => {
   if (!req.headers['content-type'].includes('application/json')) {
