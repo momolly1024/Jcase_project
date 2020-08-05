@@ -7,6 +7,9 @@
           <!-- {{ data }} -->
           <b-btn @click="block(data.index)" variant="info" v-if="!data.item.block">封鎖</b-btn>
           <b-btn  @click="block(data.index)" variant="warning" v-else-if="data.item.block">復原</b-btn>
+          |
+          <b-btn  @click="deluser(data.index)" variant="danger">刪除</b-btn>
+
         </template>
       </b-table>
     </div>
@@ -46,6 +49,20 @@ export default {
         .catch((error) => {
           console.log(error)
           alert('發生錯誤')
+        })
+    },
+    deluser (idx) {
+      this.axios.delete(process.env.VUE_APP_APIURL + '/users/' + this.userlist[idx]._id)
+        .then(response => {
+          this.userlist.splice(idx, 1)
+          Swal.fire({
+            title: '刪除成功',
+            timer: 1000,
+            showConfirmButton: false
+          })
+        })
+        .catch(() => {
+          Swal.fire('發生錯誤')
         })
     }
 
