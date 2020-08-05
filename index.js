@@ -982,6 +982,28 @@ app.patch('/users/:id', async (req, res) => {
     }
   }
 })
+// 刪除前台使用者
+app.delete('/users/:id', async (req, res) => {
+  try {
+    const result = await db.users.findByIdAndDelete(req.params.id)
+    if (result === null) {
+      res.status(404)
+      res.send({ success: false, message: '找不到資料' })
+    } else {
+      res.status(200)
+      res.send({ success: true, message: '', result })
+    }
+  } catch (error) {
+    if (error.name === 'CastError') {
+      res.status(400)
+      res.send({ success: false, message: 'ID 格式錯誤' })
+    } else {
+      // 伺服器錯誤
+      res.status(500)
+      res.send({ success: false, message: '伺服器錯誤' })
+    }
+  }
+})
 
 // 封鎖後台帳號
 app.patch('/admins/:id', async (req, res) => {
@@ -1012,6 +1034,8 @@ app.patch('/admins/:id', async (req, res) => {
     }
   }
 })
+
+
 // 抓到該後台使用者的ID 判斷是否被封鎖
 // app.get('/admins/:id', async (req, res) => {
 //   try {
