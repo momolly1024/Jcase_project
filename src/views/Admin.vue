@@ -52,7 +52,7 @@ export default {
           const data = response.data
           if (data.success) {
             Swal.fire({
-              title: '登入成功!',
+              title: '登出成功!',
               timer: 1000,
               showConfirmButton: false
             })
