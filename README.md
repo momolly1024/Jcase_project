@@ -1,5 +1,7 @@
 # front
 
+https://momolly1024.github.io/Jcase_project/
+
 ## Project setup
 ```
 npm install
