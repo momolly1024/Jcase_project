@@ -184,9 +184,16 @@ margin-bottom: 3rem;
 .likecase table tr,td{
   padding: 0.8rem;
 }
+
 .likecase{
-  justify-content: center;
+  justify-content: left;
 }
+
+.card-deck {
+    box-sizing: content-box;
+}
+
+
 .likecase b-card{
   align-items:baseline;
 }
