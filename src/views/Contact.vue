@@ -22,12 +22,12 @@
   </div>
 </template>
 <script>
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 import Swal from 'sweetalert2'
 export default {
-  components: {
-    Footer
-  },
+  // components: {
+  //   Footer
+  // },
   computed: {
     user () {
       return this.$store.getters.user
