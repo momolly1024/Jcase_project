@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="userlist">
-      <h2>所有使用者帳號</h2>
+      <h2>會員管理</h2>
       <b-table striped hover :items="userlist">
         <template v-slot:cell(block)="data">
           <!-- {{ data }} -->

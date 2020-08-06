@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="allmsg">
-     <h2>所有留言</h2>
+     <h2>留言管理</h2>
       <b-table :items="allmsg">
       <template v-slot:cell(process)="deal">
         <b-btn  variant="danger" v-if="!deal.item.process" @click="done(deal.index)">未處理</b-btn>
@@ -62,8 +62,7 @@ export default {
           return {
             user: d.user,
             text: d.text,
-            process: d.process,
-            _id: d._id
+            process: d.process
           }
         })
       })

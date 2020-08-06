@@ -1,37 +1,42 @@
 <template>
   <div id="setting" class="container">
-    <div class="banner">
-      <h2>banner修改</h2>
+    <h2>banner修改</h2>
+    <div class="banner row">
+      <div class="col-12 col-sm-6 col-md-3">
       <p class="textbgc">第一張</p>
       <b-form @submit="submit">
       bannerTitle<b-form-input  id="msginput" type="text" v-model="bannerTitle"></b-form-input>
       bannerText<b-form-input  id="msginput" type="text" v-model="bannerText"></b-form-input>
       <b-button @click="submit(event)" type="submit" variant="info">送出</b-button>
       </b-form>
-      <br><br><br>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3">
       <p class="textbgc">第二張</p>
       <b-form @submit="banner2">
       bannerTitle02<b-form-input  id="msginput" type="text" v-model="bannerTitle02"></b-form-input>
       bannerText02<b-form-input  id="msginput" type="text" v-model="bannerText02"></b-form-input>
       <b-button @click="banner2" type="submit" variant="info">送出</b-button>
       </b-form>
-      <br><br><br>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3">
       <p class="textbgc">第三張</p>
       <b-form @submit="banner3">
       bannerTitle03<b-form-input  id="msginput" type="text" v-model="bannerTitle03"></b-form-input>
       bannerText03<b-form-input  id="msginput" type="text" v-model="bannerText03"></b-form-input>
       <b-button @click="banner3" type="submit" variant="info">送出</b-button>
       </b-form>
-      <br><br><br>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
       <p class="textbgc">第四張</p>
       <b-form @submit="banner4">
       bannerTitle04<b-form-input  id="msginput" type="text" v-model="bannerTitle04"></b-form-input>
       bannerText04<b-form-input  id="msginput" type="text" v-model="bannerText04"></b-form-input>
       <b-button @click="banner4" type="submit" variant="info">送出</b-button>
       </b-form>
+      </div>
     </div>
-
-    <hr>
   </div>
 </template>
 <script>

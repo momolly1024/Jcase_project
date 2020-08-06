@@ -34,9 +34,9 @@ text-align: center;
   box-sizing: content-box !important;
 }
 
-#map{
-  margin-top: 2rem;
-}
+// #map{
+//   margin-top: 2rem;
+// }
 
 h2{
   color:rgb(168, 148, 148)
@@ -286,15 +286,18 @@ margin-bottom: 3rem;
   margin: 1rem 0;
 }
 
-#map{
-  margin-top: 1.8srem;
-}
+
 .contactpng img{
   width: 200px;
   height: 200px;
 }
 
-
+#contact{
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  
+}
 
 .cooperation{
   padding: 1rem;

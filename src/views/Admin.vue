@@ -6,11 +6,11 @@
   <div class="back">
     <b-tabs content-class="mt-3">
       <b-tab title="新增後台帳號" ><Createadmin></Createadmin></b-tab>
-      <b-tab title="修改banner文字"><Setting></Setting></b-tab>
-      <b-tab title="修改合作廠商"><Coopedit></Coopedit></b-tab>
-      <b-tab title="所有使用者" active><Allusers></Allusers></b-tab>
-      <b-tab title="所有留言"><Allmsg></Allmsg></b-tab>
-      <b-tab title="所有後台使用者"><Alladmins></Alladmins></b-tab>
+      <b-tab title="修改banner"><Setting></Setting></b-tab>
+      <b-tab title="合作廠商"><Coopedit></Coopedit></b-tab>
+      <b-tab title="留言管理"><Allmsg></Allmsg></b-tab>
+      <b-tab title="會員管理" active><Allusers></Allusers></b-tab>
+      <b-tab title="後台管理"><Alladmins></Alladmins></b-tab>
       <b-tab title="後台操作紀錄"><Record></Record></b-tab>
 
     </b-tabs>
