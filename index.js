@@ -58,8 +58,8 @@ app.use(session({
     // 1000毫秒 = 1秒鐘
     // 1秒*60*30=30分鐘
     maxAge: 1000 * 60 * 30,
-    // sameSite: 'None',
-    // secure: true
+    sameSite: 'none',
+    secure: true
   },
 
   // 是否保存未修改的session
@@ -67,7 +67,7 @@ app.use(session({
   // 是否每次重設過期時間
   rolling: true
 }))
-
+app.set('trust proxy', 1)
 // let storage
 // if (process.env.FTP === 'false') {
 //   // 開發環境將上傳檔案放本機
