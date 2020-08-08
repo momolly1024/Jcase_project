@@ -37,7 +37,7 @@ body, html {
 }
 
 #map {
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 h2 {
@@ -115,7 +115,6 @@ h2 {
   width: 100%;
   margin-top: 2rem;
   background-color: white;
-  margin-bottom: 2rem;
 }
 
 #footernav a {
@@ -196,9 +195,14 @@ h2 {
 }
 
 .likecase {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.card-deck {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 .likecase b-card {
@@ -220,7 +224,7 @@ h2 {
 }
 
 #input-account, #input-password, #input-nickname, #msginput, #input-email {
-  width: 50%;
+  width: 80%;
 }
 
 #msginput {
@@ -295,13 +299,15 @@ h2 {
   margin: 1rem 0;
 }
 
-#map {
-  margin-top: 1.8srem;
-}
-
 .contactpng img {
   width: 200px;
   height: 200px;
+}
+
+#contact {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 1rem;
 }
 
 .cooperation {
