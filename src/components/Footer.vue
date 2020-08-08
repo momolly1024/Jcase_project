@@ -100,5 +100,6 @@
     <div id="copyright" class="text-center">
       &copy;momo chi 2020/08
     </div>
+    <img src="../images/wave.svg" style="margin-top:-200px">
   </div>
 </template>
